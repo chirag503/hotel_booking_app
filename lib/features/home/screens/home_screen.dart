@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _homeCubit = BlocProvider.of<HomeCubit>(context);
+    _homeCubit.clearHomescreenValues();
     _homeCubit.getHotelsData();
   }
 
@@ -75,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return current is HotelDataLoading ||
                   current is HotelDataSuccess ||
                   current is HotelDataFailed ||
+                  current is ClearHomeScreenValues ||
                   current is SearchHotelDataLoading ||
                   current is SearchHotelDataSuccess ||
                   current is SearchHotelDataFailed;

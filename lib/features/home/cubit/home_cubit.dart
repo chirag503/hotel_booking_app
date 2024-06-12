@@ -27,6 +27,11 @@ class HomeCubit extends Cubit<HomeState> {
   bool _isSearchMode = false;
   bool get isSearchMode => _isSearchMode;
 
+  void clearHomescreenValues() {
+    _isSearchMode = false;
+    emit(ClearHomeScreenValues());
+  }
+
 // Get Hotel Data List from json file
   Future<void> getHotelsData() async {
     _hotelsList.clear();

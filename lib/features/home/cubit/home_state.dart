@@ -21,3 +21,5 @@ class IncrementPeopleCount extends HomeState {}
 class DecrementPeopleCount extends HomeState {}
 
 class ClearIntialValues extends HomeState {}
+
+class ClearHomeScreenValues extends HomeState {}
