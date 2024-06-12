@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_booking_app/constants/image_path.dart';
 import 'package:hotel_booking_app/features/auth/screens/login_screen.dart';
 import 'package:hotel_booking_app/features/home/screens/home_screen.dart';
-import 'package:hotel_booking_app/routes/anywhere_door.dart';
+import 'package:hotel_booking_app/router/anywhere_door.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,6 +15,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   late SharedPreferences prefs;
 
+// check user is logged in or not
   Future<void> checkAuth() async {
     prefs = await SharedPreferences.getInstance();
     final userId = prefs.getString("email");

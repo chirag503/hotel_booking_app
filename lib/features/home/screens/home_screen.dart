@@ -9,7 +9,7 @@ import 'package:hotel_booking_app/features/home/cubit/home_cubit.dart';
 import 'package:hotel_booking_app/features/home/cubit/home_state.dart';
 import 'package:hotel_booking_app/features/home/screens/hotel_detail_screen.dart';
 import 'package:hotel_booking_app/features/home/widgets/hotel_card.dart';
-import 'package:hotel_booking_app/routes/anywhere_door.dart';
+import 'package:hotel_booking_app/router/anywhere_door.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -8,7 +8,7 @@ import 'package:hotel_booking_app/features/auth/cubit/auth_cubit.dart';
 import 'package:hotel_booking_app/features/auth/cubit/auth_state.dart';
 import 'package:hotel_booking_app/features/auth/screens/login_screen.dart';
 import 'package:hotel_booking_app/features/home/screens/home_screen.dart';
-import 'package:hotel_booking_app/routes/anywhere_door.dart';
+import 'package:hotel_booking_app/router/anywhere_door.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});

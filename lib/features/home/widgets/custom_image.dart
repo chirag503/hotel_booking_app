@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_booking_app/constants/app_colors.dart';
 
-
 class CustomImage extends StatelessWidget {
   const CustomImage(this.image,
-      {super.key, this.width = 100,
+      {super.key,
+      this.width = 100,
       this.height = 100,
       this.bgColor,
       this.borderWidth = 0,

@@ -36,7 +36,12 @@ class HotelBookingWidget extends StatelessWidget {
         ),
         child: Row(
           children: [
-            _buildImage(),
+            CustomImage(
+              data.photo ?? "",
+              width: 150,
+              height: 150,
+              radius: 15,
+            ),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
@@ -112,15 +117,6 @@ class HotelBookingWidget extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildImage() {
-    return CustomImage(
-      data.photo ?? "",
-      width: 150,
-      height: 150,
-      radius: 15,
     );
   }
 }

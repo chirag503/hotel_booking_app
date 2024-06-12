@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hotel_booking_app/constants/app_colors.dart';
 import 'package:hotel_booking_app/constants/app_text_styles.dart';
 import 'package:hotel_booking_app/features/home/models/hotel_data_model.dart';
@@ -39,7 +38,12 @@ class HotelCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildImage(),
+            CustomImage(
+              item.photo ?? "",
+              width: double.infinity,
+              height: 180,
+              radius: 15,
+            ),
             Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Column(
@@ -94,15 +98,6 @@ class HotelCard extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildImage() {
-    return CustomImage(
-      item.photo ?? "",
-      width: double.infinity,
-      height: 180,
-      radius: 15,
     );
   }
 }
