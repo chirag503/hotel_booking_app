@@ -60,6 +60,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 14,
   );
+  static TextStyle f14W400White = const TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
 
   static TextStyle f18W500White = const TextStyle(
     color: Colors.white,

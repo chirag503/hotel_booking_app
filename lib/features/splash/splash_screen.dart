@@ -21,9 +21,11 @@ class _SplashScreenState extends State<SplashScreen> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Future.delayed(const Duration(seconds: 1), () {
         if (userId != null) {
-          AnywhereDoor.pushReplacement(context, className: const HomeScreen());
+          AnywhereDoor.pushAndRemoveUntil(context,
+              className: const HomeScreen());
         } else {
-          AnywhereDoor.pushReplacement(context, className: const LoginScreen());
+          AnywhereDoor.pushAndRemoveUntil(context,
+              className: const LoginScreen());
         }
       });
     });

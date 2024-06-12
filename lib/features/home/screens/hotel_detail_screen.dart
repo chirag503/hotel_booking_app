@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:hotel_booking_app/constants/app_colors.dart';
@@ -80,7 +81,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.data.hotelName ?? "NA",
+                          (widget.data.hotelName ?? "NA"),
                           style: AppTextStyles.f28W700Black,
                         ),
                         const SizedBox(
@@ -92,9 +93,11 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                             const SizedBox(
                               width: 5,
                             ),
-                            Text(
-                                "${widget.data.addressline1 ?? "NA"}, ${widget.data.city ?? "NA"}",
-                                style: AppTextStyles.f18W400Grey),
+                            Expanded(
+                              child: Text(
+                                  "${widget.data.addressline1 ?? "NA"}, ${widget.data.city ?? "NA"}",
+                                  style: AppTextStyles.f18W400Grey),
+                            ),
                           ],
                         ),
                         const SizedBox(

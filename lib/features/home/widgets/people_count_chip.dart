@@ -17,11 +17,8 @@ class PeopleCountChip extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-              onPressed: add,
-              icon: const Icon(
-                Icons.add,
-                color: Colors.black,
-              )),
+              onPressed: sub,
+              icon: const Icon(Icons.remove, color: Colors.black)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
@@ -30,8 +27,11 @@ class PeopleCountChip extends StatelessWidget {
             ),
           ),
           IconButton(
-              onPressed: sub,
-              icon: const Icon(Icons.remove, color: Colors.black))
+              onPressed: add,
+              icon: const Icon(
+                Icons.add,
+                color: Colors.black,
+              )),
         ],
       ),
     );

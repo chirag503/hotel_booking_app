@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: const SizedBox.shrink(),
         centerTitle: true,
         title: Text(
-          "Hotel Booky",
+          "Hotel Booking",
           style: AppTextStyles.f18W500White,
         ),
         actions: [
@@ -94,37 +94,49 @@ class _HomeScreenState extends State<HomeScreen> {
               }
 
               if (state is HotelDataLoading) {
-                return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      LottieBuilder.asset(ImagePath.loadingLottie),
-                      Text("Loading...", style: AppTextStyles.f28W700Black),
-                    ],
+                return Expanded(
+                  child: SingleChildScrollView(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.6,
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          LottieBuilder.asset(ImagePath.loadingLottie),
+                          Text("Loading...", style: AppTextStyles.f28W700Black),
+                        ],
+                      ),
+                    ),
                   ),
                 );
               }
 
               if (state is HotelDataFailed || state is SearchHotelDataFailed) {
-                return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: MediaQuery.of(context).size.width * 0.6,
-                  child: LottieBuilder.asset(ImagePath.errorLottie),
+                return Expanded(
+                  child: SingleChildScrollView(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.6,
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: LottieBuilder.asset(ImagePath.errorLottie),
+                    ),
+                  ),
                 );
               }
 
               return (_homeCubit.hotelsList.isEmpty ||
                       (_homeCubit.hotelsSearchList.isEmpty &&
                           _homeCubit.isSearchMode))
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        LottieBuilder.asset(ImagePath.noDataLottie),
-                        Text("No Hotels Found",
-                            style: AppTextStyles.f20W500Black),
-                      ],
+                  ? Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            LottieBuilder.asset(ImagePath.noDataLottie),
+                            Text("No Hotels Found",
+                                style: AppTextStyles.f20W500Black),
+                          ],
+                        ),
+                      ),
                     )
                   : Expanded(
                       child: ListView.separated(

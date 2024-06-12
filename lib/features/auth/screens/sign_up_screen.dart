@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     BlocConsumer<AuthCubit, AuthState>(
                       listener: (context, state) {
                         if (state is SignUpSuccess) {
-                          AnywhereDoor.push(context,
+                          AnywhereDoor.pushAndRemoveUntil(context,
                               className: const HomeScreen());
                         }
                       },

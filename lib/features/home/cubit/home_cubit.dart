@@ -59,10 +59,11 @@ class HomeCubit extends Cubit<HomeState> {
         try {
           for (var element in _hotelsList) {
             if ((element.city ?? "")
-                .toLowerCase()
-                .contains(query.toLowerCase())||(element.hotelName ?? "")
-                .toLowerCase()
-                .contains(query.toLowerCase())) {
+                    .toLowerCase()
+                    .contains(query.toLowerCase()) ||
+                (element.hotelName ?? "")
+                    .toLowerCase()
+                    .contains(query.toLowerCase())) {
               _hotelsSearchList.add(element);
             }
           }
