@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hotel_booking_app/constants/app_colors.dart';
 import 'package:hotel_booking_app/constants/app_text_styles.dart';
 
+
+// common textfeild
 class CommonTextfeild extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
@@ -55,6 +57,8 @@ class CommonTextfeild extends StatelessWidget {
   }
 }
 
+
+// search Textfeild
 class SearchTextfeild extends StatelessWidget {
   final String hintText;
   final IconData prefixIcon;

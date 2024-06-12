@@ -26,7 +26,6 @@ class Amenties extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           if (data.isNotEmpty)
             Text(
               forRoom ? "Room Types" : "Amenities",

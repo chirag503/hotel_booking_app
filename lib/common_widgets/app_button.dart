@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///Common Button
+///Common App Button
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,

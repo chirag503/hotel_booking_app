@@ -15,10 +15,9 @@ class SearchHotelDataSuccess extends HomeState {}
 class SearchHotelDataFailed extends HomeState {}
 
 class CheckInOutDateSuccess extends HomeState {}
+
 class IncrementPeopleCount extends HomeState {}
 
 class DecrementPeopleCount extends HomeState {}
 
 class ClearIntialValues extends HomeState {}
-
-

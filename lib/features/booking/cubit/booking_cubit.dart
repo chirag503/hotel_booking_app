@@ -9,6 +9,8 @@ class BookingCubit extends Cubit<BookingState> {
 
   List<BookingModel> _bookingList = [];
   List<BookingModel> get bookingList => _bookingList;
+
+  // get hotel booking list
   Future<void> getBookingList() async {
     // Open Hive box
     await Hive.openBox<BookingModel>('booking');
@@ -28,7 +30,6 @@ class BookingCubit extends Cubit<BookingState> {
           _bookingList.add(element);
         }
       }
-
       emit(BookingListSuccess());
     } catch (e) {
       _bookingList = [];

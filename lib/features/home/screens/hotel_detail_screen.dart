@@ -80,7 +80,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.data.hotelName ?? "NA",
+                          (widget.data.hotelName ?? "NA"),
                           style: AppTextStyles.f28W700Black,
                         ),
                         const SizedBox(
@@ -92,9 +92,11 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                             const SizedBox(
                               width: 5,
                             ),
-                            Text(
-                                "${widget.data.addressline1 ?? "NA"}, ${widget.data.city ?? "NA"}",
-                                style: AppTextStyles.f18W400Grey),
+                            Expanded(
+                              child: Text(
+                                  "${widget.data.addressline1 ?? "NA"}, ${widget.data.city ?? "NA"}",
+                                  style: AppTextStyles.f18W400Grey),
+                            ),
                           ],
                         ),
                         const SizedBox(

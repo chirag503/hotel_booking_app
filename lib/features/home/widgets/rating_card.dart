@@ -4,7 +4,8 @@ import 'package:hotel_booking_app/constants/app_text_styles.dart';
 class RatingCard extends StatelessWidget {
   final String starRating;
   final String numberOfReviews;
-  const RatingCard({super.key, required this.starRating, required this.numberOfReviews});
+  const RatingCard(
+      {super.key, required this.starRating, required this.numberOfReviews});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,16 @@ class RatingCard extends StatelessWidget {
                   text: starRating,
                   style: AppTextStyles.f14W600White,
                   children: [
-                TextSpan(text: " / 5", style: AppTextStyles.f14W500White)
+                TextSpan(text: " / 5", style: AppTextStyles.f14W400White),
+                const WidgetSpan(
+                    child: Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Icon(
+                    Icons.star,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                ))
               ])),
         ),
         Text("$numberOfReviews Verified Ratings",

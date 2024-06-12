@@ -13,6 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
 
+// <===========================Home Screen variables and functions=============================>
+
   List<HotelItem> _hotelsList = [];
   List<HotelItem> get hotelsList => _hotelsList;
 
@@ -59,10 +61,11 @@ class HomeCubit extends Cubit<HomeState> {
         try {
           for (var element in _hotelsList) {
             if ((element.city ?? "")
-                .toLowerCase()
-                .contains(query.toLowerCase())||(element.hotelName ?? "")
-                .toLowerCase()
-                .contains(query.toLowerCase())) {
+                    .toLowerCase()
+                    .contains(query.toLowerCase()) ||
+                (element.hotelName ?? "")
+                    .toLowerCase()
+                    .contains(query.toLowerCase())) {
               _hotelsSearchList.add(element);
             }
           }
@@ -75,7 +78,7 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-// <===========================Detail Screen variables and functions=============================>
+// <===========================Hotel Detail Screen variables and functions=============================>
 
   DateTimeRange? _checkInOutDate;
   DateTimeRange? get checkInOutDate => _checkInOutDate;
@@ -83,6 +86,7 @@ class HomeCubit extends Cubit<HomeState> {
   int _peopleCount = 1;
   int get peopleCount => _peopleCount;
 
+// clear initial values
   void clearValues() {
     _peopleCount = 1;
     _checkInOutDate = null;
